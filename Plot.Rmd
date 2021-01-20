@@ -1,0 +1,34 @@
+---
+title: "RMarkDownPlotly"
+author: "Kara Schimmelfing"
+date: "1/20/2021"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Assignment
+
+Create a web page presentation using R Markdown that features a plot created with Plotly. Host your webpage on either GitHub Pages, RPubs, or NeoCities. Your webpage must contain the date that you created the document, and it must contain a plot created with Plotly. We would love to see you show off your creativity! 
+
+I chose to use the dataset mtcars for my plot to compare a variety of factors on the 1/4 mile time. 
+
+
+
+## Slide with R Output
+
+```{r cars, echo = FALSE, results='hide', message=FALSE, warning=FALSE}
+library(plotly)
+```
+```{r plot}
+p <- plot_ly(mtcars,x=~hp, y=~mpg, z=~wt,color=~qsec, mode= "markers",type = "scatter3d") %>% layout(title = "Horsepower, miles per gallon, weight and 1/4 mile time")
+p
+```
+Please left-click and rotate the whole 3-dimension on any direction you want to view the visual.
+
+## The End!
+
+
+
